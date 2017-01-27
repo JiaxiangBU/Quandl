@@ -1,0 +1,28 @@
+# Importing Quandl Datasets
+
+# Load in the Quandl package with the help of library() here:
+library(Quandl)
+
+# Assign dataset to the variable:
+data <- Quandl("NSE/OIL") #do not forget “"
+PragueStockExchange <- Quandl("PRAGUESE/PX", api_key="isCAcW7wymtxfpf12duX")
+
+# Work with quantmod
+library(quantmod)
+
+# Load the Facebook data with the help of Quandl
+Facebook <- Quandl("GOOG/NASDAQ_FB", api_key="isCAcW7wymtxfpf12duX", type = "xts")
+  # set xts.
+  
+# Plot the chart with the help of candleChart()
+help(candleChart)
+candleChart(Facebook)
+
+# Look up the first 3 results for 'Bitcoin' within the Quandl database:
+results <- Quandl.search(query = "Bitcoin", silent = FALSE)
+
+# Print out the results
+str(results)
+
+# Assign the data set with code BCHAIN/TOTBC
+BitCoin <- Quandl("BCHAIN/TOTBC")
